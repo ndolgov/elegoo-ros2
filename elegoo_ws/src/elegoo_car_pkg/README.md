@@ -18,3 +18,10 @@ ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z:
 
 ros2 topic echo /sonar_distance
 ```
+
+```sh
+cd elegoo-ros2/elegoo_ws/
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-select elegoo_car_pkg
+colcon test --packages-select elegoo_car_pkg
+```

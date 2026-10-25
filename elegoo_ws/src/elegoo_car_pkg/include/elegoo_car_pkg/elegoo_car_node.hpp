@@ -9,6 +9,7 @@ namespace elegoo_car_pkg {
 class ElegooCarNode : public rclcpp::Node {
 public:
   ElegooCarNode();
+  ElegooCarNode(std::unique_ptr<elegoo_car_pkg::ITransport> transport);
   ~ElegooCarNode() override;
 
 private:

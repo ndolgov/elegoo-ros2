@@ -6,6 +6,8 @@
 
 namespace elegoo_car_pkg::test {
 
+using elegoo_car_pkg::ITransport; 
+
 class MockTransport : public ITransport {
 public:
   MockTransport() : connected_(false) {}

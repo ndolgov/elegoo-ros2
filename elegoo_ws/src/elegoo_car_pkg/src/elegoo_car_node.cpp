@@ -6,8 +6,14 @@
 namespace elegoo_car_pkg {
 
 ElegooCarNode::ElegooCarNode()
+: ElegooCarNode(std::make_unique<elegoo_car_pkg::TcpTransport>("192.168.4.1", 100)) 
+{
+}  
+
+ElegooCarNode::ElegooCarNode(std::unique_ptr<elegoo_car_pkg::ITransport> transport)
 : Node("elegoo_car_node"), car_ip_("192.168.4.1"), car_port_(100),
-  obstacle_avoidance_enabled_(true), safety_distance_cm_(25.0f) {
+  obstacle_avoidance_enabled_(true), safety_distance_cm_(25.0f),
+  transport_(std::move(transport)) {
   
   this->declare_parameter<std::string>("car_ip", "192.168.4.1");
   this->declare_parameter<int>("car_port", 100);

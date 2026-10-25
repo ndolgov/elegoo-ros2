@@ -4,6 +4,7 @@
   <name>elegoo_car_pkg</name>
   <version>0.1.0</version>
   <description>ROS 2 Jazzy C++ digital twin and control bridge for ELEGOO Smart Robot Car Kit V4.0</description>
+  <maintainer email="ndolgov@users.noreply.github.com">Nikita Dolgov</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

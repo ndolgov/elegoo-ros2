@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "rclcpp/rclcpp.hpp"
 #include "elegoo_car_pkg/elegoo_car_node.hpp"
-#include "elegoo_car_pkg/wifi_transport.hpp"
+#include "elegoo_car_pkg/tcp_transport.hpp"
 #include <thread>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -60,7 +60,7 @@ protected:
 };
 
 TEST_F(IntegrationTestFixture, EndToEndTcpTransportAndNodeExchange) {
-  auto transport = std::make_unique<elegoo_car_pkg::WifiTransport>("127.0.0.1", 11000);
+  auto transport = std::make_unique<elegoo_car_pkg::TcpTransport>("127.0.0.1", 11000);
   auto node = std::make_shared<elegoo_car_pkg::ElegooCarNode>(std::move(transport));
 
   // Allow time for TCP connection and control loop query transaction
